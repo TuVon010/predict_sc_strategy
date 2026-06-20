@@ -807,3 +807,320 @@ What happens under alternative score scenarios?
 ```
 
 `football-value-analysis` exists to make that process repeatable, transparent, and disciplined.
+
+
+可以。这里要分清楚两个概念：
+
+1. **ChatGPT Skill**：像你刚才这个 `football-value-analysis/SKILL.md`，可以作为 ChatGPT Skills 的可上传 Skill 包。
+2. **Codex / Claude Code / Cursor / Copilot Coding Agent 的项目指令**：通常是放在仓库里的 `AGENTS.md`、`CLAUDE.md`、`.cursor/rules` 等文件，让代码代理在这个仓库里自动读取。
+
+所以你的这个足球分析 Skill 可以同时做两种导入方式。
+
+---
+
+## 方式一：导入 ChatGPT Skills
+
+这个用你已经打包好的：
+
+```text
+skill.zip
+```
+
+一般流程是：
+
+1. 打开 ChatGPT 的 Skills 页面或 Skill library。
+2. 选择创建/上传 Skill。
+3. 上传 `skill.zip`。
+4. 系统会读取里面的 `SKILL.md`。
+5. 之后你问足球赔率、盘口、收益计算、临场策略时，它就会自动触发。
+
+适合场景：
+
+```text
+平时和 ChatGPT 对话分析比赛、赔率、盘口、收益。
+```
+
+---
+
+## 方式二：导入 Codex
+
+Codex 更像代码代理，它通常不是直接“安装 ChatGPT Skill”，而是读取仓库里的项目说明文件。常见做法是在仓库根目录放一个：
+
+```text
+AGENTS.md
+```
+
+然后把你的 Skill 精简转换成 Codex 能读的项目指令。
+
+推荐结构：
+
+```text
+predict_sc_strategy/
+├── README.md
+├── AGENTS.md
+├── football-value-analysis/
+│   └── SKILL.md
+└── skill.zip
+```
+
+### AGENTS.md 示例
+
+你可以在仓库根目录新建：
+
+```markdown
+# AGENTS.md
+
+## Project Purpose
+
+This repository contains a football value-analysis skill and methodology for analyzing soccer matches, betting markets, Asian handicaps, totals, live-match scenarios, expected value, and payoff structures.
+
+## Main Instruction
+
+When working on this repository, read:
+
+- `football-value-analysis/SKILL.md`
+
+Use it as the authoritative methodology for football match analysis, odds value analysis, ticket payoff calculations, and strategy construction.
+
+## Core Rules
+
+- Do not present any prediction as guaranteed.
+- Do not use language such as “sure win,” “guaranteed profit,” or “risk-free.”
+- Always separate:
+  1. football likelihood,
+  2. mathematical value,
+  3. strategy risk/reward.
+- Always calculate implied probability and break-even probability when odds are available.
+- Always explain Asian handicap and total-goal settlement clearly.
+- Always warn when the same risk is repeated across multiple tickets.
+- For live matches, consider score, minute, substitutions, cards, game state, and whether the market still has value.
+
+## Output Style
+
+Use Chinese by default unless the user asks for English.
+
+Prefer structured output:
+
+1. Short conclusion
+2. Football analysis
+3. Mathematical/odds analysis
+4. Strategy table
+5. Payoff scenario table
+6. Risk statement
+```
+
+然后在 Codex 里使用时，你可以让它：
+
+```text
+Read AGENTS.md and football-value-analysis/SKILL.md, then help me improve the strategy engine or write examples.
+```
+
+Codex 这类 coding agent 通常会读取仓库上下文和项目级说明文件；社区和研究里也常见 `AGENTS.md` 作为 coding agent 的仓库级配置文件，Claude Code 则更常见 `CLAUDE.md`。([arXiv][1])
+
+---
+
+## 方式三：导入 Claude Code
+
+Claude Code 最常见的是在项目根目录放：
+
+```text
+CLAUDE.md
+```
+
+Claude Code 会把它当作项目工作指令。你可以把 `AGENTS.md` 的内容复制一份，改名为：
+
+```text
+CLAUDE.md
+```
+
+推荐仓库结构：
+
+```text
+predict_sc_strategy/
+├── README.md
+├── CLAUDE.md
+├── AGENTS.md
+├── football-value-analysis/
+│   └── SKILL.md
+└── skill.zip
+```
+
+### CLAUDE.md 示例
+
+```markdown
+# CLAUDE.md
+
+## Repository Context
+
+This repository stores a football value-analysis methodology and reusable AI skill.
+
+The main methodology file is:
+
+- `football-value-analysis/SKILL.md`
+
+Before answering football analysis, odds strategy, Asian handicap, totals, live-match, or betting-slip evaluation tasks, read and follow that file.
+
+## Required Reasoning Framework
+
+For every football strategy analysis:
+
+1. Analyze the football context:
+   - lineups
+   - tactics
+   - motivation
+   - previous match data
+   - weather and venue
+   - live score if relevant
+
+2. Analyze the mathematics:
+   - implied probability
+   - break-even probability
+   - expected value
+   - Poisson-style score distribution when useful
+   - Asian handicap or total-goal settlement
+
+3. Analyze risk:
+   - worst-case loss
+   - maximum return
+   - key dangerous scores
+   - repeated exposure
+   - whether the user is chasing
+
+4. Give a strategy:
+   - core protection
+   - value exposure
+   - small upside ticket
+   - final risk warning
+
+## Style
+
+Respond in Chinese by default.
+
+Never say:
+- guaranteed win
+- sure profit
+- risk-free
+- must buy
+- all-in
+
+Use:
+- research direction
+- simulated allocation
+- theoretical value
+- risk structure
+- cannot guarantee profit
+```
+
+Claude Code 使用 Markdown 项目指令文件是常见模式，相关文献和资料也把 `CLAUDE.md` / `AGENTS.md` 作为 coding agent 的配置上下文来讨论。([arXiv][2])
+
+---
+
+## 方式四：导入 Cursor
+
+Cursor 一般可以用 `.cursor/rules` 或项目规则。
+
+推荐：
+
+```text
+predict_sc_strategy/
+├── .cursor/
+│   └── rules/
+│       └── football-value-analysis.mdc
+├── football-value-analysis/
+│   └── SKILL.md
+```
+
+`football-value-analysis.mdc` 可以这样写：
+
+```markdown
+---
+description: Football value analysis methodology for soccer match prediction, odds value, Asian handicap, totals, live match strategy, and ticket payoff evaluation.
+alwaysApply: true
+---
+
+Use `football-value-analysis/SKILL.md` as the main methodology.
+
+When analyzing football matches or betting strategies:
+
+- separate football likelihood from odds value;
+- calculate implied probability when odds are available;
+- explain Asian handicap and total-goal settlement;
+- calculate profit/loss scenarios for tickets;
+- avoid guaranteed-profit language;
+- use Chinese by default.
+```
+
+---
+
+## 方式五：导入 Claude Project / 普通 Claude Chat
+
+如果不是 Claude Code，而是网页 Claude 项目：
+
+1. 建一个 Claude Project。
+2. 上传：
+
+   * `README.md`
+   * `football-value-analysis/SKILL.md`
+3. 在 Project Instructions 里写：
+
+```text
+Use the uploaded football-value-analysis/SKILL.md as the required methodology for all soccer match analysis, odds-value analysis, live-match decisions, Asian handicap settlement, total-goal settlement, and payoff calculations. Respond in Chinese by default. Never promise guaranteed profit.
+```
+
+这样 Claude 在该 Project 里就会按这套方法回答。
+
+---
+
+## 我建议你仓库里同时放这几个文件
+
+最通用的结构是：
+
+```text
+predict_sc_strategy/
+├── README.md
+├── AGENTS.md
+├── CLAUDE.md
+├── football-value-analysis/
+│   └── SKILL.md
+└── skill.zip
+```
+
+含义：
+
+| 文件                                 | 用途                         |
+| ---------------------------------- | -------------------------- |
+| `README.md`                        | 给人看的仓库说明                   |
+| `AGENTS.md`                        | Codex / 通用 coding agent 指令 |
+| `CLAUDE.md`                        | Claude Code 项目指令           |
+| `football-value-analysis/SKILL.md` | ChatGPT Skill 核心文件         |
+| `skill.zip`                        | 可上传到 ChatGPT Skills 的打包文件  |
+
+---
+
+## 最推荐的做法
+
+你这个项目我建议这样处理：
+
+1. `football-value-analysis/SKILL.md` 保留完整版本。
+2. `README.md` 放中英文介绍。
+3. `AGENTS.md` 写给 Codex / 通用 coding agent。
+4. `CLAUDE.md` 写给 Claude Code。
+5. `skill.zip` 用于 ChatGPT Skill 上传。
+
+这样同一套方法可以同时用于：
+
+```text
+ChatGPT Skills
+Codex
+Claude Code
+Claude Project
+Cursor
+其他 coding agents
+```
+
+一句话：
+
+> **ChatGPT 用 skill.zip；Codex 用 AGENTS.md；Claude Code 用 CLAUDE.md；Cursor 用 .cursor/rules；Claude Project 直接上传 SKILL.md 并写入 Project Instructions。**
+
+[1]: https://arxiv.org/abs/2601.20404?utm_source=chatgpt.com "On the Impact of AGENTS.md Files on the Efficiency of AI Coding Agents"
+[2]: https://arxiv.org/abs/2509.14744?utm_source=chatgpt.com "On the Use of Agentic Coding Manifests: An Empirical Study of Claude Code"
