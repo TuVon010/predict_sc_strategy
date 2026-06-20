@@ -1,8 +1,7 @@
 ---
-
 name: football-value-analysis
 description: use this skill for structured football/soccer match research, prediction, odds-value analysis, asian handicap and total-goals settlement, same-game parlay review, live-match reassessment, betting-slip payoff math, and low-cost risk-controlled strategy design. trigger when the user asks to analyze football matches, teams, lineups, tactics, injuries, motivation, goal-difference incentives, odds, expected value, break-even probabilities, profit/loss scenarios, stake/sporttery markets, or “保本” strategy. combine football reasoning, mathematical probability, market value, and risk control. never promise profit or certain outcomes.
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 # Football Value Analysis
 
@@ -18,11 +17,11 @@ Default to Chinese. Keep the tone analytical, cautious, and research-oriented. N
 
 ## Non-Negotiable Safety Rules
 
-* Never use claims such as “必中”, “稳赚”, “包赢”, “稳保本”, or “无风险”.
-* Explain that true保本 only exists if all outcomes are mathematically covered at guaranteed positive return. Most user plans are only “在部分比分/部分剧本下接近保本”.
-* Do not encourage chasing losses, increasing stake after live swings, or heavy staking.
-* Prefer “研究配置”, “模拟方案”, “理论价值”, “风险结构”, “赔率价值” rather than “买稳了”.
-* If the user is emotional during live betting, prioritize “不追/等收/降低波动” when value has disappeared.
+- Never use claims such as “必中”, “稳赚”, “包赢”, “稳保本”, or “无风险”.
+- Explain that true保本 only exists if all outcomes are mathematically covered at guaranteed positive return. Most user plans are only “在部分比分/部分剧本下接近保本”.
+- Do not encourage chasing losses, increasing stake after live swings, or heavy staking.
+- Prefer “研究配置”, “模拟方案”, “理论价值”, “风险结构”, “赔率价值” rather than “买稳了”.
+- If the user is emotional during live betting, prioritize “不追/等收/降低波动” when value has disappeared.
 
 ## Information Handling
 
@@ -34,10 +33,10 @@ When the query depends on current scores, odds, injuries, lineups, weather, or r
 
 Identify:
 
-* match(es), competition, kickoff time, and live minute if applicable;
-* market type: 1x2, asian handicap, sporttery handicap 1x2, totals, correct score, half/full time, both teams to score, player goals, player assists, player shots, cards, corners, same-game parlay, or multi-leg parlay;
-* odds, stake, and whether the user already placed the ticket;
-* user goal: explanation, prediction, payoff calculation, value ranking, hedge/protection, live reassessment, or strategy construction.
+- match(es), competition, kickoff time, and live minute if applicable;
+- market type: 1x2, asian handicap, sporttery handicap 1x2, totals, correct score, half/full time, both teams to score, player goals, player assists, player shots, player cards, corners, same-game parlay, or multi-leg parlay;
+- odds, stake, and whether the user already placed the ticket;
+- user goal: explanation, prediction, payoff calculation, value ranking, hedge/protection, live reassessment, or strategy construction.
 
 ### 2. Football Research Layer
 
@@ -45,56 +44,55 @@ Analyze each match through these lenses:
 
 #### Tournament motivation
 
-* Points, goal difference, goals scored, remaining fixtures.
-* Whether a draw is useful, both sides can accept a draw, or one side must win.
-* Whether goal difference matters. It matters most when a strong team needs recovery after failing to win, when third-place ranking may be relevant, or when multiple teams can finish level. It matters less when both teams already have good points and a draw helps both.
+- Points, goal difference, goals scored, remaining fixtures.
+- Whether a draw is useful, both sides can accept a draw, or one side must win.
+- Whether goal difference matters. It matters most when a strong team needs recovery after failing to win, when third-place ranking may be relevant, or when multiple teams can finish level. It matters less when both teams already have good points and a draw helps both.
 
 #### Team and player layer
 
-* Formation, likely XI, bench depth, rotation risk.
-* Key creators, finishers, ball-winners, center backs, fullbacks, goalkeeper.
-* Injuries and suspensions mapped to probability effects:
-
-  * missing creator: lower chance creation;
-  * missing striker: lower conversion;
-  * missing ball-winner: higher transition risk;
-  * missing center back: opponent scoring probability up;
-  * star on bench: lower early attacking intensity.
+- Formation, likely XI, bench depth, rotation risk.
+- Key creators, finishers, ball-winners, center backs, fullbacks, goalkeeper.
+- Injuries and suspensions mapped to probability effects:
+  - missing creator: lower chance creation;
+  - missing striker: lower conversion;
+  - missing ball-winner: higher transition risk;
+  - missing center back: opponent scoring probability up;
+  - star on bench: lower early attacking intensity.
 
 #### Tactical matchup
 
-* Pressing vs build-up.
-* Wide overloads and fullback zones.
-* Low block vs favorite chance quality.
-* Transition defense.
-* Set-piece and aerial mismatch.
-* Whether the underdog has counterattack outlets.
+- Pressing vs build-up.
+- Wide overloads and fullback zones.
+- Low block vs favorite chance quality.
+- Transition defense.
+- Set-piece and aerial mismatch.
+- Whether the underdog has counterattack outlets.
 
 Typical patterns:
 
-* Favorite vs deep block: win likely, margin uncertain.
-* Two teams with 3 points: draw/small-score risk rises.
-* Two teams with 0 points: game can open after the first goal.
-* Strong favorite needing goal difference: deep handicap becomes more plausible, but must still pass EV math.
-* Big live lead: leader may slow tempo, rotate, and protect players.
+- Favorite vs deep block: win likely, margin uncertain.
+- Two teams with 3 points: draw/small-score risk rises.
+- Two teams with 0 points: game can open after the first goal.
+- Strong favorite needing goal difference: deep handicap becomes more plausible, but must still pass EV math.
+- Big live lead: leader may slow tempo, rotate, and protect players.
 
 #### Previous match data
 
 Prefer process over final score:
 
-* xG/xGA, shots, shots on target, big chances, corners, field tilt, possession quality, red cards, game-state effects.
-* A 1-0 win while being outshot may be weaker than the result.
-* A 1-1 draw with higher xG and big chances can be strong evidence.
-* Late goals after collapse can inflate final score.
+- xG/xGA, shots, shots on target, big chances, corners, field tilt, possession quality, red cards, game-state effects.
+- A 1-0 win while being outshot may be weaker than the result.
+- A 1-1 draw with higher xG and big chances can be strong evidence.
+- Late goals after collapse can inflate final score.
 
 #### Venue and climate
 
 Consider temperature, humidity, wind, rain, altitude, turf, travel, time zone, local crowd, and kickoff time.
 
-* Heat/humidity: lower tempo, more fatigue and late errors.
-* Altitude: reduced repeated sprint capacity.
-* Rain/wind: more randomness, set pieces, mistakes.
-* Comfortable weather: fewer limits on tempo.
+- Heat/humidity: lower tempo, more fatigue and late errors.
+- Altitude: reduced repeated sprint capacity.
+- Rain/wind: more randomness, set pieces, mistakes.
+- Comfortable weather: fewer limits on tempo.
 
 ### 3. Probability and Market Math
 
@@ -125,9 +123,9 @@ EV = model_probability * odds - 1
 
 Interpretation:
 
-* EV > 0: theoretical value.
-* EV near 0: no clear edge.
-* EV < 0: direction may be likely but price is poor.
+- EV > 0: theoretical value.
+- EV near 0: no clear edge.
+- EV < 0: direction may be likely but price is poor.
 
 Always separate:
 
@@ -138,16 +136,16 @@ Likely ≠ Valuable
 #### Break-even reference
 
 | Odds | Break-even probability |
-| ---: | ---------------------: |
-| 1.20 |                  83.3% |
-| 1.40 |                  71.4% |
-| 1.60 |                  62.5% |
-| 1.67 |                  59.9% |
-| 1.80 |                  55.6% |
-| 2.00 |                  50.0% |
-| 2.50 |                  40.0% |
-| 3.00 |                  33.3% |
-| 4.00 |                  25.0% |
+|---:|---:|
+| 1.20 | 83.3% |
+| 1.40 | 71.4% |
+| 1.60 | 62.5% |
+| 1.67 | 59.9% |
+| 1.80 | 55.6% |
+| 2.00 | 50.0% |
+| 2.50 | 40.0% |
+| 3.00 | 33.3% |
+| 4.00 | 25.0% |
 
 ### 4. Score Model
 
@@ -161,22 +159,22 @@ P(score x:y) = P_home(x) * P_away(y)
 
 Build or adjust lambdas from:
 
-* team strength/Elo/FIFA ranking;
-* recent xG/xGA and shot quality;
-* lineup and injury effects;
-* tactical matchup;
-* venue/weather;
-* motivation and goal-difference incentives;
-* market information;
-* live score and remaining time.
+- team strength/Elo/FIFA ranking;
+- recent xG/xGA and shot quality;
+- lineup and injury effects;
+- tactical matchup;
+- venue/weather;
+- motivation and goal-difference incentives;
+- market information;
+- live score and remaining time.
 
 Keep adjustments bounded. Example bounds:
 
-* minor injury: 2%-5%;
-* major creator/striker missing: 5%-12%;
-* major defensive absence: opponent lambda +5%-15%;
-* extreme climate: total lambda -3%-10%;
-* goal-difference incentive: favorite attacking lambda +5%-12%, but also consider rotation and game-management risk.
+- minor injury: 2%-5%;
+- major creator/striker missing: 5%-12%;
+- major defensive absence: opponent lambda +5%-15%;
+- extreme climate: total lambda -3%-10%;
+- goal-difference incentive: favorite attacking lambda +5%-12%, but also consider rotation and game-management risk.
 
 ### 5. Market Settlement Rules
 
@@ -196,12 +194,12 @@ Avoid over-concentration. Warn when the same condition appears in multiple ticke
 
 For an existing ticket set, always compute:
 
-* total stake;
-* minimum return and maximum loss;
-* maximum return and maximum profit;
-* key scenario returns;
-* approximate probability of return >= stake;
-* expected return if model probabilities are available.
+- total stake;
+- minimum return and maximum loss;
+- maximum return and maximum profit;
+- key scenario returns;
+- approximate probability of return >= stake;
+- expected return if model probabilities are available.
 
 Formula:
 
@@ -228,12 +226,13 @@ When live:
 
 Common live patterns:
 
-* 4-0 at halftime: leader may slow tempo; further overs/deep handicaps may lose value.
-* 0-0 after 70': full-time over becomes dangerous unless pressure is extreme.
-* Favorite up by 2+ late: deeper handicap often worse than live under.
-* Underdog red card early: favorite margin and over probabilities may rise, but only if chance quality also improves.
-* Trailing favorite with high possession but no shots on target: do not overrate the comeback.
-* Late live betting after repeated failed attacks: avoid chasing unless the odds compensate for the risk.
+- 4-0 at halftime: leader may slow tempo; further overs/deep handicaps may lose value.
+- 0-0 after 70': full-time over becomes dangerous unless pressure is extreme.
+- Favorite up by 2+ late: deeper handicap often worse than live under.
+- Underdog red card early: favorite margin and over probabilities may rise, but only if chance quality also improves.
+- Trailing favorite with high possession but no shots on target: do not overrate the comeback.
+- Late live betting after repeated failed attacks: avoid chasing unless the odds compensate for the risk.
+- Late strong-team pressure with fresh attackers, rising shots on target, many corners, and tired defenders can justify a small high-variance over/next-goal entry if price is high enough.
 
 #### Red Card Live-Adjustment Rule
 
@@ -252,52 +251,47 @@ A team being one man up may dominate possession without creating enough shots, s
 After a red card, check these factors before recommending any live strategy:
 
 1. **Time of the red card**
-
-   * Early red card: bigger impact.
-   * Red card near halftime: defending team can reorganize at halftime.
-   * Late red card: less time for the numerical advantage to matter.
+   - Early red card: bigger impact.
+   - Red card near halftime: defending team can reorganize at halftime.
+   - Late red card: less time for the numerical advantage to matter.
 
 2. **Scoreline**
-
-   * If the team with 10 men is already leading, they may drop into a compact low block.
-   * If the team with 10 men is trailing, the match may become chaotic, but not always high-scoring.
-   * If the match is level, the team with 10 men may accept a draw.
+   - If the team with 10 men is already leading, they may drop into a compact low block.
+   - If the team with 10 men is trailing, the match may become chaotic, but not always high-scoring.
+   - If the match is level, the team with 10 men may accept a draw.
 
 3. **Chance quality after the red card**
    Look for:
-
-   * shots on target increasing;
-   * box touches increasing;
-   * repeated corners;
-   * dangerous free kicks;
-   * defensive clearances under pressure;
-   * goalkeeper saves;
-   * blocked shots inside the box;
-   * visible defensive disorganization.
+   - shots on target increasing;
+   - box touches increasing;
+   - repeated corners;
+   - dangerous free kicks;
+   - defensive clearances under pressure;
+   - goalkeeper saves;
+   - blocked shots inside the box;
+   - visible defensive disorganization.
 
    If the team with 11 men only has sterile possession, do not overrate its goal probability.
 
 4. **Defending team profile**
    Some teams are built to survive with 10 men:
-
-   * strong center-backs;
-   * compact low block;
-   * good aerial defense;
-   * physical midfield;
-   * disciplined defensive shape;
-   * good goalkeeper;
-   * counterattacking outlet.
+   - strong center-backs;
+   - compact low block;
+   - good aerial defense;
+   - physical midfield;
+   - disciplined defensive shape;
+   - good goalkeeper;
+   - counterattacking outlet.
 
 5. **Attacking team profile**
    A team with numerical advantage still needs:
-
-   * creative midfielders;
-   * wide overloads;
-   * box presence;
-   * good crossing quality;
-   * second-ball pressure;
-   * set-piece quality;
-   * finishing ability.
+   - creative midfielders;
+   - wide overloads;
+   - box presence;
+   - good crossing quality;
+   - second-ball pressure;
+   - set-piece quality;
+   - finishing ability.
 
 6. **Market price after the red card**
    Red-card markets often move fast. If the price collapses too much, the value may disappear even if the direction is logically correct.
@@ -391,6 +385,120 @@ After a red card, wait for a short confirmation window when possible:
 
 If the answer is no, do not chase simply because of the red card.
 
+
+#### Late Pressure + Substitution Momentum Rule
+
+In late-match situations, do not automatically downgrade overs or next-goal markets only because the match is near the end. Time remaining is important, but late pressure can create high-value goal entries when the market overprices the clock and underprices momentum.
+
+##### Core principle
+
+```text
+Late overs are not bad by default. They become valuable only when pressure quality, substitution impact, and defensive fatigue all point in the same direction.
+```
+
+A late over or next-goal selection can be justified when the attacking team is not merely holding possession, but has created repeated high-pressure actions and has improved its box presence through substitutions.
+
+##### Late pressure confirmation checklist
+
+Before recommending a late over, next goal, or comeback entry after 70', check:
+
+1. **Shot quality trend**
+   - Are shots on target increasing compared with earlier phases?
+   - Is the goalkeeper being tested?
+   - Are blocked shots happening inside the box rather than from harmless distance?
+
+2. **Set-piece and second-ball pressure**
+   - Are corners piling up?
+   - Are dangerous free kicks and long throws increasing?
+   - Is the attacking team winning second balls after crosses and clearances?
+
+3. **Substitution momentum**
+   - Did the attacking team bring on a true striker, box runner, or fresh wide creator?
+   - Has a substitute already scored, assisted, or created a big chance?
+   - Did the substitution change the attack from sterile possession to direct box threat?
+
+4. **Defensive fatigue and defensive rotation**
+   - Has the defending team kept the same center-backs or fullbacks under pressure for a long time?
+   - Did the defending team mostly substitute forwards or midfielders instead of refreshing the back line?
+   - Are defenders losing aerial duels, second balls, or markers?
+   - Are clearances becoming shorter or more panicked?
+
+5. **Game-state incentives**
+   - Does one team still strongly prefer a win rather than a draw?
+   - Would the defending team accept a draw but still leave counterattacking outlets?
+   - Is the match script creating two-way danger rather than one-way sterile pressure?
+
+6. **Price check**
+   - Late overs and next-goal prices can become attractive only if the odds compensate for the clock.
+   - If the price is too low, do not chase even when pressure exists.
+
+##### Upgrade late goal probability when these signals align
+
+Upgrade the chance of another goal when several of these are true:
+
+```text
+- strong team has recently equalized or scored;
+- substitute striker/attacker has already made impact;
+- corners are high and still increasing;
+- shots on target are rising late;
+- defending back line is tired and not refreshed;
+- attacking team is repeatedly entering the box;
+- match still has stoppage time and emotional momentum;
+- the price on Over/next goal is 2.80-3.20+ and only one goal is needed.
+```
+
+##### Downgrade late goal probability when these signals are absent
+
+Do not chase late overs if:
+
+```text
+- possession is high but shots on target are flat;
+- attacks are slow crosses into a comfortable defense;
+- both teams are accepting the result;
+- the favorite removes its main box threat without replacing it;
+- the defending team refreshes center-backs/fullbacks and regains control;
+- the odds are short and no longer compensate for the remaining time.
+```
+
+##### Strategy interpretation
+
+Late match markets should be split into two layers:
+
+```text
+1:1 / under / draw = lower-variance state protection
+Over 2.5 / next goal = higher-variance value if pressure signals align
+```
+
+Do not treat these as mutually exclusive truths. A draw or under can be the base case while a late over can still be a value bet if the odds are high enough.
+
+##### Example: wrong vs correct late-match reasoning
+
+Wrong:
+
+```text
+It is already 86', so Over 2.5 is automatically bad.
+```
+
+Correct:
+
+```text
+It is 86', so time risk is high. However, if the attacking team has a fresh striker who already scored, 8+ corners, rising shots on target, tired defenders, and Over 2.5 is around 3.00, the late over may be a small high-variance value entry.
+```
+
+##### Practical live rule
+
+After 70', do not decide only from the score and minute. Re-check the last 10-15 minutes of pressure:
+
+```text
+- Has the attack improved after substitutions?
+- Are fresh attackers attacking tired defenders?
+- Are corners and shots on target increasing?
+- Is the defending back line actually refreshed?
+- Is the current price above break-even for the remaining goal probability?
+```
+
+If the pressure profile is real and the odds are high, recommend only a small stake and clearly label it as a high-variance value shot, not a safe play.
+
 ### 9. Output Format
 
 For match analysis:
@@ -474,9 +582,9 @@ Motivation matters, but it does not automatically create value.
 
 Examples:
 
-* A team needing goal difference may attack more, but deep handicap still needs probability support.
-* A team needing a win may become more open defensively.
-* Two teams both needing points may produce chaos, but not always quality finishing.
+- A team needing goal difference may attack more, but deep handicap still needs probability support.
+- A team needing a win may become more open defensively.
+- Two teams both needing points may produce chaos, but not always quality finishing.
 
 Do not treat motivation as a substitute for chance creation, lineup quality, or market value.
 
@@ -579,6 +687,89 @@ game management
 time remaining
 ```
 
+
+#### Trap: Underweighting Late Pressure and Substitution Momentum
+
+A common live-analysis mistake is treating the current scoreline and the minute as static, while ignoring how substitutions and fatigue have changed the final phase of the match.
+
+Bad pattern:
+
+```text
+It is 1:1 after 80', so protect the draw/under and avoid overs.
+```
+
+This can be incomplete when the attacking side has improved its chance quality.
+
+Correct pattern:
+
+```text
+It is 1:1 after 80'
+→ Check whether attacking substitutions created more box threat
+→ Check whether shots on target and corners increased
+→ Check whether the defending back line is tired or not refreshed
+→ Check whether the over/next-goal price compensates for the clock
+→ Then decide whether late over is value or only chasing
+```
+
+Warning signs that late over/next-goal may have value:
+
+```text
+- substitute striker has already scored or repeatedly reached the box;
+- attacking team has many late corners or dangerous free kicks;
+- shots on target are increasing late, not just total shots;
+- defending center-backs/fullbacks have played under pressure for 80+ minutes;
+- defending team substituted attackers/midfielders but not the back line;
+- defenders are clearing poorly or losing second balls;
+- odds on needing one more goal are high enough, such as around 2.80-3.20+.
+```
+
+Warning signs that late over is only chasing:
+
+```text
+- no recent shots on target;
+- no box entries or dangerous set pieces;
+- favorite has removed its main finisher and lost box presence;
+- defending team has refreshed the back line and regained shape;
+- market odds are too short for the time remaining;
+- user is trying to recover previous losses rather than exploiting a new edge.
+```
+
+Better decision rule:
+
+```text
+Late time reduces goal probability, but real pressure plus fresh attackers against tired defenders can offset part of the clock risk.
+```
+
+When this trap appears, answer with two separate layers:
+
+```text
+Base case: draw/under remains the lower-variance outcome.
+Value shot: late over/next goal can be justified only if pressure indicators and price are strong enough.
+```
+
+Post-match review rule:
+
+When a late-over call is missed, review whether the model underweighted:
+
+```text
+substitution impact
+fresh striker/box presence
+late shots on target
+corner pressure
+defensive fatigue
+unrefreshed back line
+stoppage-time pressure
+```
+
+and overweighted:
+
+```text
+minute on the clock
+static draw incentive
+earlier low shot quality
+scoreline protection
+```
+
 #### Trap: Repeated Exposure
 
 If the same condition appears in multiple tickets, the portfolio risk is larger than it looks.
@@ -640,14 +831,15 @@ A 1.20 selection still needs 83.3% probability before margin. If the real probab
 
 Before finalizing, check:
 
-* Did you separate football likelihood from odds value?
-* Did you compute break-even probability for key odds?
-* Did you account for market margin when appropriate?
-* Did you correctly settle quarter lines?
-* Did you identify correlated/repeated exposure?
-* Did you explain “保本” honestly?
-* Did you avoid overclaiming certainty?
-* Did you mark unverified lineups/odds as uncertain?
-* For live matches, did you distinguish hedging from chasing?
-* For red-card situations, did you check whether the numerical advantage created real chance quality?
-* Did you avoid treating possession, motivation, or red cards as guarantees?
+- Did you separate football likelihood from odds value?
+- Did you compute break-even probability for key odds?
+- Did you account for market margin when appropriate?
+- Did you correctly settle quarter lines?
+- Did you identify correlated/repeated exposure?
+- Did you explain “保本” honestly?
+- Did you avoid overclaiming certainty?
+- Did you mark unverified lineups/odds as uncertain?
+- For live matches, did you distinguish hedging from chasing?
+- For red-card situations, did you check whether the numerical advantage created real chance quality?
+- For late-match situations, did you check substitution momentum, defensive fatigue, corners, shots on target, and price before rejecting or recommending overs?
+- Did you avoid treating possession, motivation, red cards, or late pressure as guarantees?
