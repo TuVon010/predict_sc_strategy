@@ -251,6 +251,7 @@ Common live patterns:
 - Trailing favorite with high possession but no shots on target: do not overrate the comeback.
 - Late live betting after repeated failed attacks: avoid chasing unless the odds compensate for the risk.
 - Late strong-team pressure with fresh attackers, rising shots on target, many corners, and tired defenders can justify a small high-variance over/next-goal entry if price is high enough.
+- Favorite leads 2-0 at halftime with opponent 0 shots on target: do not rely only on low-odds protection; check next-goal, exact total goals 3/4, and 0-3/0-4 before the price collapses.
 
 
 #### 0-0 Favorite Pressure Rule
@@ -355,6 +356,97 @@ substitution risk after 60'-75'
 ```
 
 If a player was quiet in the previous match or was substituted early, downgrade anytime-goal odds unless the role improves or the opponent matchup clearly changes. If a winger/attacker had shots, shots on target, or hit the woodwork, they may be better value than the famous striker at a short price.
+
+#### Early Lead Extension and Score-Timing Rule
+
+When a technically stronger team scores early or leads by 2+ goals before halftime, do not automatically collapse the strategy into only low-odds protection. Reassess whether the favorite is still creating clean chances and whether the opponent must open up.
+
+##### Core principle
+
+```text
+An early 1-0 or halftime 2-0 can create value in next-goal, exact team goals, and correct-score extension before the market fully compresses.
+```
+
+Separate these questions:
+
+1. Is the favorite likely to win?
+2. Is the favorite likely to keep a clean sheet?
+3. Is the favorite likely to add one more goal?
+4. Has the correct-score price already collapsed too far?
+
+Do not use very low odds as a substitute for timing. A correct idea bought too late can become poor value.
+
+##### Upgrade favorite goal-extension probability when
+
+```text
+- favorite leads early and still controls possession and field position;
+- opponent has few or zero shots on target;
+- opponent must change shape or press higher after halftime;
+- favorite has multiple creators or fresh attacking substitutes available;
+- the favorite's bench has real attacking quality, not only defensive control;
+- next-goal or exact-total prices remain meaningfully above low-odds protection;
+- the favorite is chasing goal difference or group position.
+```
+
+##### Downgrade goal-extension probability when
+
+```text
+- favorite removes its main creators/finishers and switches to game management;
+- opponent accepts damage limitation and does not press out;
+- shots on target have stopped increasing;
+- tempo drops sharply after a two-goal lead;
+- the price on correct score or team goals has already collapsed below value.
+```
+
+##### Preferred markets by score state
+
+After an early favorite lead:
+
+```text
+1-0 early: favorite & BTTS No, under 3.5, favorite -1/-1.5 small, next favorite goal if price is fair.
+2-0 at halftime: favorite next goal, exact total goals 3 or 4, clean sheet/underdog 0 goals, correct score 0-3/0-4 small.
+3-0 after 65': under 4.5 or exact total 4 only if price still compensates; avoid late big stakes on already collapsed 0-4 odds.
+```
+
+##### Correct-score timing rule
+
+Correct score is price-sensitive. If the likely score extension is identified before the next goal, take a small position early or skip it later.
+
+```text
+Good timing: 2-0 at halftime, opponent 0 shots on target, favorite bench strong -> small 0-3 / 0-4 / total goals 3 or 4.
+Poor timing: after 3-0, buying 0-4 at 1.30 with meaningful remaining-time risk.
+```
+
+##### Low-odds protection allocation
+
+When the live model is correct but prices are short, prefer leaving some cash unused over filling the slip with many 1.01-1.10 selections. Low-odds protection should be small and intentional.
+
+Use this hierarchy:
+
+```text
+1. Clean scenario at fair price: favorite next goal, exact total, correct-score extension.
+2. Lower-variance support: clean sheet, under 4.5/5.5, no red card if price is not too short.
+3. Avoid: many tiny-yield tickets that can all be ruined by one random card, goal, penalty, or VAR event.
+```
+
+##### Practical example pattern
+
+If Japan-like favorite leads 2-0 at halftime, the opponent has 0 shots on target, and the favorite still has quality attackers or impact substitutes, do not only buy:
+
+```text
+red card no @1.06
+BTTS no @1.07
+under 4.5 @1.10
+```
+
+Consider a better-balanced live portfolio:
+
+```text
+main small: opponent team goals 0 or BTTS No only if price is acceptable;
+value shot: favorite next goal / total goals 3 / total goals 4;
+upside: correct score 0-3 and 0-4 before the third goal, not after price collapse;
+discipline: avoid loading many low-odds protections.
+```
 
 #### Red Card Live-Adjustment Rule
 
@@ -960,6 +1052,42 @@ Check recent shots, shots on target, expected minutes, substitution risk, penalt
 
 If another winger or creator had clearer previous-match shooting signals, woodwork hits, or shots on target, that player may offer better value than the short-priced striker.
 
+#### Trap: Buying the Right Score Too Late
+
+A correct live read can still be poor value if the entry is too late.
+
+Bad pattern:
+
+```text
+The favorite is already 3-0 and 0-4 looks likely, so buy 0-4 even though the odds collapsed to 1.30.
+```
+
+Correct pattern:
+
+```text
+At 2-0 halftime, if the opponent has 0 shots on target and the favorite still has attacking quality, price 0-3/0-4 and exact total goals before the market compresses. After 3-0, only buy 0-4 if the odds still compensate for one more goal and remaining-time risk.
+```
+
+Review timing, not only the final outcome. If the idea wins but at very low odds, ask whether the same scenario could have been bought earlier at a better price.
+
+#### Trap: Overusing Tiny-Yield Live Protection
+
+Many low-odds tickets can make a portfolio look safe while adding little upside.
+
+Bad pattern:
+
+```text
+No red card @1.06, BTTS No @1.07, Under 4.5 @1.10, no goal in 10-minute window @1.09, all with meaningful stake.
+```
+
+Correct pattern:
+
+```text
+Use low-odds protection only when it materially stabilizes the portfolio. Prefer one or two well-priced scenario bets over many fragile tiny-yield bets.
+```
+
+When reviewing a winning portfolio, do not praise only profit. Check whether profit came from good price selection or from risking large stake for tiny incremental return.
+
 #### Trap: Repeated Exposure
 
 If the same condition appears in multiple tickets, the portfolio risk is larger than it looks.
@@ -1035,4 +1163,7 @@ Before finalizing, check:
 - For a favorite still 0-0 after halftime or 60'-75', did you downgrade deep handicap/high-total exposure and consider 0-0/1-0/2-0 or exact-goals coverage?
 - Did you avoid meaningless ultra-low odds and unnecessary DNB/low-return protection?
 - Did you check whether corner/card/player-prop markets match the actual game script instead of reputation alone?
+- If a favorite led early or 2-0 at halftime, did you consider next-goal/exact-total/correct-score extension before prices collapsed?
+- Did you avoid buying the right correct score too late at a short price?
+- Did you prevent too much stake from going into many 1.01-1.10 tiny-yield protection tickets?
 - Did you avoid treating possession, motivation, red cards, or late pressure as guarantees?
