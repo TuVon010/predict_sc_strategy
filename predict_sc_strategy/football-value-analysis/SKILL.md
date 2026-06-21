@@ -190,6 +190,24 @@ Separate tickets into three layers:
 
 Avoid over-concentration. Warn when the same condition appears in multiple tickets, such as Brazil -2.5 single plus Brazil -2.5 in a parlay.
 
+
+#### Staged-entry and portfolio discipline
+
+Do not build the whole exposure before the match when the edge depends on live execution or finishing quality.
+
+Use staged staking by default for small-bankroll live users:
+
+```text
+Pre-match: small stake only on core edge.
+Halftime: reassess score, shots on target, corners, cards, and substitutions.
+60'-75': shift from pre-match scripts to current-score structures.
+75'+: avoid deep handicaps and high totals unless late-pressure signals and price are strong.
+```
+
+When a favorite is expected to dominate but may face a low block, avoid overloading deep handicap, over, correct score, and player-goal props all in the same direction. Reserve part of the stake for live correction.
+
+Do not treat ultra-low odds as protection. Selections below about 1.10 usually add little value unless they are part of a clearly calculated arbitrage/coverage structure. A 1.01 win with meaningful football risk is usually poor risk-reward.
+
 ### 7. Payoff and Risk Calculation
 
 For an existing ticket set, always compute:
@@ -233,6 +251,110 @@ Common live patterns:
 - Trailing favorite with high possession but no shots on target: do not overrate the comeback.
 - Late live betting after repeated failed attacks: avoid chasing unless the odds compensate for the risk.
 - Late strong-team pressure with fresh attackers, rising shots on target, many corners, and tired defenders can justify a small high-variance over/next-goal entry if price is high enough.
+
+
+#### 0-0 Favorite Pressure Rule
+
+When a strong favorite is 0-0 at halftime or still 0-0 after 60'-75', do not keep applying the pre-match big-win model without adjustment.
+
+##### Core principle
+
+```text
+Dominance can be real while the deep handicap is already damaged.
+```
+
+If the favorite has high possession, many shots, and shots on target but has not scored, separate these questions:
+
+1. Is the favorite still likely to score?
+2. Is the favorite still likely to cover a deep handicap or high total?
+3. Is the live price now better expressed through correct score, exact goals, team goals, under, cards, or corners?
+
+##### Downgrade deep favorite exposure when
+
+```text
+- halftime is 0-0 and the favorite needed a multi-goal win;
+- 60'-75' is still 0-0;
+- the favorite has many shots but poor finishing or repeated saves;
+- the underdog has no shots on target but remains compact;
+- the pre-match -2/-2.25/Over 2.5 needs several late goals;
+- the user already holds multiple big-win tickets.
+```
+
+In this state, do not add to deep handicaps or high totals unless the late-pressure rule also confirms fresh attackers, defensive fatigue, rising shots on target, and adequate price.
+
+##### Preferred live structures after a long 0-0
+
+When the favorite is still creating real chances but the clock has reduced the big-win path, consider smaller scenario coverage instead:
+
+```text
+0-0 correct score = defense against continued finishing failure
+1-0 correct score = favorite finally scores once
+2-0 correct score = favorite scores and late defensive collapse adds a second
+exact total goals 0/1/2 = cleaner than adding more handicap exposure
+favorite -1 = only if 1-0 push is acceptable and 2-0+ is still plausible
+under 1.5 / under 2.5 = if finishing failure and low away threat persist
+```
+
+##### Example decision pattern
+
+If a favorite has 70%+ possession, 20+ shots, 10+ shots on target, but is still 0-0 after 70', do not say only “the goal is coming.” The live portfolio should usually shift toward:
+
+```text
+Base case: 0-0 / 1-0 / 2-0
+Avoid: adding -2, -2.25, Over 2.5, or player-goal props unless price is exceptional
+Useful side markets: cards, favorite team corners, underdog team corners under
+```
+
+#### Cards, Corners, and Player-Prop Live Rules
+
+##### Cards
+
+For cards, identify the game script rather than relying only on team region or reputation.
+
+A strict referee increases card volatility, but cards usually come from match roles:
+
+```text
+Passive defending team under pressure = more tactical fouls, pulling, late challenges.
+Favorite frustrated by 0-0 = more dissent, counterpress fouls, and emotional cards.
+Both teams with early yellows = total-card overs become more plausible.
+```
+
+Do not assume “South American team = more cards.” A physical team can still have fewer cards if it controls the ball and fouls in safer zones. A weaker team can receive more cards because it defends dangerous areas and stops dribbles or transitions.
+
+##### Corners
+
+Prefer team-corner logic over total-corner logic when pressure is one-sided.
+
+```text
+If only the favorite is attacking, favorite team corners are cleaner than full-match corner overs.
+If the underdog is trapped deep, underdog corners under may be better than total corners.
+If the favorite has many shots on target but few corners, do not keep adding corner overs blindly.
+```
+
+Reassess corner bets at halftime:
+
+```text
+Favorite corners high and pressure continues -> team corner over can remain alive.
+Favorite shots high but corners low -> attacks may be ending in saves/blocks not corners; downgrade corner overs.
+Underdog 0 corners by halftime and little possession -> underdog team-corner under stays logical.
+```
+
+##### Player props
+
+Do not rank player props by name value alone. Use player process data and role:
+
+```text
+minutes expected
+starter vs substitute
+shots and shots on target in previous match
+box touches
+set-piece role
+penalty role
+whether the team attack funnels to that side
+substitution risk after 60'-75'
+```
+
+If a player was quiet in the previous match or was substituted early, downgrade anytime-goal odds unless the role improves or the opponent matchup clearly changes. If a winger/attacker had shots, shots on target, or hit the woodwork, they may be better value than the famous striker at a short price.
 
 #### Red Card Live-Adjustment Rule
 
@@ -770,6 +892,74 @@ earlier low shot quality
 scoreline protection
 ```
 
+
+
+#### Trap: Overstaying the Pre-Match Script
+
+A common error is continuing to buy the original pre-match idea after the match state has damaged it.
+
+Bad pattern:
+
+```text
+The favorite was expected to win 3-0, so keep buying -2 and Over 2.5 even at 0-0 after 70'.
+```
+
+Correct pattern:
+
+```text
+The favorite may still be likely to win, but the live score and remaining time shift value toward 0-0/1-0/2-0, exact goals, under, cards, or team-corner markets.
+```
+
+When the favorite has real pressure but the score is still 0-0 late, distinguish:
+
+```text
+Goal probability may remain high.
+Big-win probability may be much lower.
+```
+
+#### Trap: Meaningless Low-Odds Protection
+
+Avoid using very low odds as fake safety.
+
+Bad pattern:
+
+```text
+This is almost certain, so I can put money on 1.01 or 1.05.
+```
+
+Correct pattern:
+
+```text
+A low-odds ticket still has football risk, and the reward may not justify tying up stake. Prefer leaving cash unused or buying a clearer scenario at better odds.
+```
+
+Do not recommend ultra-low odds unless:
+
+```text
+- all outcomes and settlement are explicitly calculated;
+- it materially improves a portfolio;
+- the risk of one random event is acknowledged;
+- the user understands the tiny upside.
+```
+
+#### Trap: Name-Value Player Props
+
+A famous striker at short odds is not automatically the best player prop.
+
+Bad pattern:
+
+```text
+The striker is the biggest name, so anytime goal is the best player bet.
+```
+
+Correct pattern:
+
+```text
+Check recent shots, shots on target, expected minutes, substitution risk, penalty role, and whether the attack actually flows through that player.
+```
+
+If another winger or creator had clearer previous-match shooting signals, woodwork hits, or shots on target, that player may offer better value than the short-priced striker.
+
 #### Trap: Repeated Exposure
 
 If the same condition appears in multiple tickets, the portfolio risk is larger than it looks.
@@ -842,4 +1032,7 @@ Before finalizing, check:
 - For live matches, did you distinguish hedging from chasing?
 - For red-card situations, did you check whether the numerical advantage created real chance quality?
 - For late-match situations, did you check substitution momentum, defensive fatigue, corners, shots on target, and price before rejecting or recommending overs?
+- For a favorite still 0-0 after halftime or 60'-75', did you downgrade deep handicap/high-total exposure and consider 0-0/1-0/2-0 or exact-goals coverage?
+- Did you avoid meaningless ultra-low odds and unnecessary DNB/low-return protection?
+- Did you check whether corner/card/player-prop markets match the actual game script instead of reputation alone?
 - Did you avoid treating possession, motivation, red cards, or late pressure as guarantees?
