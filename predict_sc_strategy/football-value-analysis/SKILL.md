@@ -190,6 +190,62 @@ Separate tickets into three layers:
 
 Avoid over-concentration. Warn when the same condition appears in multiple tickets, such as Brazil -2.5 single plus Brazil -2.5 in a parlay.
 
+#### Portfolio Architecture and Stake Caps
+
+Before approving or reviewing multiple live tickets, identify the user's true exposure, not only the market names. Many different markets can all depend on the same match script.
+
+Use this default stake structure unless the user explicitly asks otherwise:
+
+```text
+Main thesis: about 60% of the match budget.
+Support / protection: about 25% of the match budget.
+Upside / special markets: at most 15% of the match budget.
+```
+
+Define these layers strictly:
+
+1. **Main thesis**: the clearest football model, such as favorite controls the match, underdog can score, total goals range, or cards stay low.
+2. **Support / protection**: markets that still work if the main thesis is slightly wrong, such as moderate unders, team clean sheet, +handicap, or exact team-goal range.
+3. **Upside / special markets**: correct score, next goal, 10-minute goal windows, first card, first corner, exact cards, exact corners, late exact score, or player props.
+
+For special markets:
+
+```text
+Single special-market ticket: usually 0.5u-1u.
+Total special-market exposure: usually <= 15%-20% of that match budget.
+Never let time-window goals, first-card markets, exact corners, or exact scores become the main stake.
+```
+
+For ultra-low odds:
+
+```text
+Odds below 1.20 may be used only as small structural support.
+Default maximum: 1u-2u per ticket unless a precise payoff table proves value.
+Do not stack many 1.01-1.20 tickets to create an illusion of safety.
+One medium losing ticket can erase many tiny low-odds wins.
+```
+
+When evaluating a user's existing tickets, explicitly state whether the portfolio is truly diversified or only appears diversified. If several tickets lose from the same event, call this out.
+
+#### One-Match One-Core-Model Rule
+
+For each match, name one core model before recommending more tickets:
+
+```text
+Example: strong favorite 3-0 early -> favorite controls, opponent unlikely to score, final score likely 3-0/4-0/5-0.
+```
+
+All new entries must fit the core model or be clearly labelled as a hedge. Do not mix contradictory models in the same match budget, such as:
+
+```text
+favorite will slow down and control the match
++ favorite will keep attacking for corners
++ cards will explode
++ fifth goal comes in a narrow time window
+```
+
+If the score or substitutions change the model, say so and stop recommending tickets from the old model.
+
 
 #### Staged-entry and portfolio discipline
 
@@ -251,7 +307,6 @@ Common live patterns:
 - Trailing favorite with high possession but no shots on target: do not overrate the comeback.
 - Late live betting after repeated failed attacks: avoid chasing unless the odds compensate for the risk.
 - Late strong-team pressure with fresh attackers, rising shots on target, many corners, and tired defenders can justify a small high-variance over/next-goal entry if price is high enough.
-- Favorite leads 2-0 at halftime with opponent 0 shots on target: do not rely only on low-odds protection; check next-goal, exact total goals 3/4, and 0-3/0-4 before the price collapses.
 
 
 #### 0-0 Favorite Pressure Rule
@@ -357,95 +412,94 @@ substitution risk after 60'-75'
 
 If a player was quiet in the previous match or was substituted early, downgrade anytime-goal odds unless the role improves or the opponent matchup clearly changes. If a winger/attacker had shots, shots on target, or hit the woodwork, they may be better value than the famous striker at a short price.
 
-#### Early Lead Extension and Score-Timing Rule
 
-When a technically stronger team scores early or leads by 2+ goals before halftime, do not automatically collapse the strategy into only low-odds protection. Reassess whether the favorite is still creating clean chances and whether the opponent must open up.
+#### Early Blowout Model-Switch Rule
 
-##### Core principle
+When a strong favorite leads by 3+ goals before halftime or early in the second half, switch from the pre-match domination model to a control-and-management model unless the live pressure proves otherwise.
+
+Default interpretation:
 
 ```text
-An early 1-0 or halftime 2-0 can create value in next-goal, exact team goals, and correct-score extension before the market fully compresses.
+Favorite likely controls tempo.
+Opponent goal probability may remain low.
+Further deep handicaps, overs, corner overs, and card overs may lose value because the favorite no longer needs to force attacks.
 ```
 
-Separate these questions:
+Before adding live tickets after a 3-0 or 4-0 score, check:
 
-1. Is the favorite likely to win?
-2. Is the favorite likely to keep a clean sheet?
-3. Is the favorite likely to add one more goal?
-4. Has the correct-score price already collapsed too far?
+1. **Favorite intent**
+   - Is the favorite still pressing high and attacking wide areas?
+   - Or has it started circulating possession, protecting starters, and reducing risk?
 
-Do not use very low odds as a substitute for timing. A correct idea bought too late can become poor value.
+2. **Substitutions**
+   - Are main creators/finishers removed?
+   - Are fresh attackers still trying to score, or are midfield/control players coming on?
 
-##### Upgrade favorite goal-extension probability when
+3. **Opponent threat**
+   - Does the opponent have shots, shots on target, corners, or dangerous transitions?
+   - If not, opponent-to-score and BTTS Yes remain weak.
+
+4. **Market fit**
+   Prefer markets that match the new model:
 
 ```text
-- favorite leads early and still controls possession and field position;
-- opponent has few or zero shots on target;
-- opponent must change shape or press higher after halftime;
-- favorite has multiple creators or fresh attacking substitutes available;
-- the favorite's bench has real attacking quality, not only defensive control;
-- next-goal or exact-total prices remain meaningfully above low-odds protection;
-- the favorite is chasing goal difference or group position.
+Opponent exact goals 0
+BTTS No
+Moderate under such as under 5.5 or under 6.5
+Exact total goals 4 or 5 as small upside
+Correct score 4-0/5-0 as small upside only
 ```
 
-##### Downgrade goal-extension probability when
+Downgrade or avoid:
 
 ```text
-- favorite removes its main creators/finishers and switches to game management;
-- opponent accepts damage limitation and does not press out;
-- shots on target have stopped increasing;
-- tempo drops sharply after a two-goal lead;
-- the price on correct score or team goals has already collapsed below value.
+red/yellow card over without foul/emotion signals
+corner over after favorite slows down
+fifth/sixth goal narrow time windows
+very deep favorite handicaps after creators are substituted
 ```
 
-##### Preferred markets by score state
+A correct football direction can still be a poor live price if bought after the market has collapsed.
 
-After an early favorite lead:
+#### Card and Corner Confirmation Rule
+
+Do not recommend pre-match or live card/corner positions only from reputation. Require match-state confirmation.
+
+For cards, check:
 
 ```text
-1-0 early: favorite & BTTS No, under 3.5, favorite -1/-1.5 small, next favorite goal if price is fair.
-2-0 at halftime: favorite next goal, exact total goals 3 or 4, clean sheet/underdog 0 goals, correct score 0-3/0-4 small.
-3-0 after 65': under 4.5 or exact total 4 only if price still compensates; avoid late big stakes on already collapsed 0-4 odds.
+score pressure
+foul density
+early yellow or repeated warnings
+referee threshold in this match
+transition fouls against fast attackers
+visible arguments, crowding the referee, revenge tackles, or time-wasting
 ```
 
-##### Correct-score timing rule
-
-Correct score is price-sensitive. If the likely score extension is identified before the next goal, take a small position early or skip it later.
+General card guidance:
 
 ```text
-Good timing: 2-0 at halftime, opponent 0 shots on target, favorite bench strong -> small 0-3 / 0-4 / total goals 3 or 4.
-Poor timing: after 3-0, buying 0-4 at 1.30 with meaningful remaining-time risk.
+One-sided blowout with low fouls -> downgrade cards over.
+Tense draw or 1-goal match with both teams needing points -> upgrade cards over.
+Back-and-forth 2-2 / 1-1 with tactical fouls -> avoid card unders.
+Strict referee matters only if the game gives him reasons to use cards.
 ```
 
-##### Low-odds protection allocation
-
-When the live model is correct but prices are short, prefer leaving some cash unused over filling the slip with many 1.01-1.10 selections. Low-odds protection should be small and intentional.
-
-Use this hierarchy:
+For corners, check:
 
 ```text
-1. Clean scenario at fair price: favorite next goal, exact total, correct-score extension.
-2. Lower-variance support: clean sheet, under 4.5/5.5, no red card if price is not too short.
-3. Avoid: many tiny-yield tickets that can all be ruined by one random card, goal, penalty, or VAR event.
+wide attacks and blocked crosses
+sustained pressure after score changes
+whether the favorite still attacks after leading
+whether the underdog can counter and force corners
 ```
 
-##### Practical example pattern
-
-If Japan-like favorite leads 2-0 at halftime, the opponent has 0 shots on target, and the favorite still has quality attackers or impact substitutes, do not only buy:
+General corner guidance:
 
 ```text
-red card no @1.06
-BTTS no @1.07
-under 4.5 @1.10
-```
-
-Consider a better-balanced live portfolio:
-
-```text
-main small: opponent team goals 0 or BTTS No only if price is acceptable;
-value shot: favorite next goal / total goals 3 / total goals 4;
-upside: correct score 0-3 and 0-4 before the third goal, not after price collapse;
-discipline: avoid loading many low-odds protections.
+Favorite dominance before scoring can create corners.
+Favorite dominance after a large lead may reduce corners if the team slows down.
+High shots do not automatically mean high corners.
 ```
 
 #### Red Card Live-Adjustment Rule
@@ -1052,41 +1106,110 @@ Check recent shots, shots on target, expected minutes, substitution risk, penalt
 
 If another winger or creator had clearer previous-match shooting signals, woodwork hits, or shots on target, that player may offer better value than the short-priced striker.
 
-#### Trap: Buying the Right Score Too Late
 
-A correct live read can still be poor value if the entry is too late.
+#### Trap: Apparent Diversification vs True Diversification
+
+A portfolio can look diversified because it contains many markets, while actually depending on one fragile script.
 
 Bad pattern:
 
 ```text
-The favorite is already 3-0 and 0-4 looks likely, so buy 0-4 even though the odds collapsed to 1.30.
+Team A win
+Team A next goal
+Team B under 0.5 team goals
+Team A first card
+Team A corner over
+Team A correct score
+```
+
+These are not independent if they all require Team A to dominate comfortably. If the match becomes a 2-2 exchange, many can fail together.
+
+Correct pattern:
+
+```text
+Name the single match script that would make most tickets win.
+Name the single event that would kill most tickets.
+Reduce stake if too many tickets share that event.
+```
+
+When a user asks why a portfolio lost, separate:
+
+```text
+football model error: the match script was wrong;
+portfolio error: the same error was repeated across many tickets;
+price error: the direction was right but bought too late or too short;
+stake error: high-variance side markets received main-stake money.
+```
+
+#### Trap: Special Markets as Main Stake
+
+Time-window goals, first card, exact card count, exact corner count, next goal, and correct score are not base-case markets.
+
+Warning signs:
+
+```text
+several 10-minute goal-window bets;
+large stake on first card or first corner;
+large stake on exact score after odds have already collapsed;
+corner over added after the favorite is already protecting a big lead;
+card over added without foul density or emotional pressure.
+```
+
+Better decision rule:
+
+```text
+Use special markets only as small upside or precise scenario coverage.
+Do not use them to recover losses.
+```
+
+#### Trap: Low-Odds Stack Cannot Repair High-Variance Losses
+
+Many low-odds wins can feel safe while adding little profit.
+
+Bad pattern:
+
+```text
+Win five tickets at 1.06-1.14, then lose one 8u or 10u ticket on cards/corners/time-window goals.
+```
+
+The portfolio can still lose despite a high hit rate.
+
+Before adding low-odds support, calculate:
+
+```text
+How much profit does this ticket add?
+How many such wins are needed to offset one likely losing ticket?
+Does the low-odds ticket protect a real risk or just occupy bankroll?
+```
+
+Default rule:
+
+```text
+If odds < 1.20 and stake is larger than the main value position, warn the user.
+```
+
+#### Trap: Failing to Switch Models After the Match Changes
+
+Do not continue recommending markets from the old script after the match state changes.
+
+Examples:
+
+```text
+Pre-match: favorite pressure may create corners.
+After 3-0 at 25': favorite may slow down; corner over is no longer automatically supported.
+
+Pre-match: underdog may foul to survive.
+After 3-0: match may lose emotional tension; card over may weaken.
+
+Pre-match: favorite over/deep handicap is live.
+After favorite substitutes creators: exact total 4/5 or moderate under may be better.
 ```
 
 Correct pattern:
 
 ```text
-At 2-0 halftime, if the opponent has 0 shots on target and the favorite still has attacking quality, price 0-3/0-4 and exact total goals before the market compresses. After 3-0, only buy 0-4 if the odds still compensate for one more goal and remaining-time risk.
+Whenever score, red card, injury, or substitutions change incentives, declare whether the old thesis still applies.
 ```
-
-Review timing, not only the final outcome. If the idea wins but at very low odds, ask whether the same scenario could have been bought earlier at a better price.
-
-#### Trap: Overusing Tiny-Yield Live Protection
-
-Many low-odds tickets can make a portfolio look safe while adding little upside.
-
-Bad pattern:
-
-```text
-No red card @1.06, BTTS No @1.07, Under 4.5 @1.10, no goal in 10-minute window @1.09, all with meaningful stake.
-```
-
-Correct pattern:
-
-```text
-Use low-odds protection only when it materially stabilizes the portfolio. Prefer one or two well-priced scenario bets over many fragile tiny-yield bets.
-```
-
-When reviewing a winning portfolio, do not praise only profit. Check whether profit came from good price selection or from risking large stake for tiny incremental return.
 
 #### Trap: Repeated Exposure
 
@@ -1163,7 +1286,7 @@ Before finalizing, check:
 - For a favorite still 0-0 after halftime or 60'-75', did you downgrade deep handicap/high-total exposure and consider 0-0/1-0/2-0 or exact-goals coverage?
 - Did you avoid meaningless ultra-low odds and unnecessary DNB/low-return protection?
 - Did you check whether corner/card/player-prop markets match the actual game script instead of reputation alone?
-- If a favorite led early or 2-0 at halftime, did you consider next-goal/exact-total/correct-score extension before prices collapsed?
-- Did you avoid buying the right correct score too late at a short price?
-- Did you prevent too much stake from going into many 1.01-1.10 tiny-yield protection tickets?
 - Did you avoid treating possession, motivation, red cards, or late pressure as guarantees?
+- Did you identify whether the ticket set is truly diversified or only repeatedly exposed to one script?
+- Did you cap special markets and low-odds tickets so they cannot dominate the bankroll?
+- For blowout live states, did you switch from domination logic to control-and-management logic before adding cards, corners, deep handicaps, or time-window goals?
